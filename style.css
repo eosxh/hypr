@@ -1,8 +1,8 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: JetBrains Mono;
-    font-weight: bold; 
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: FontAwesome, JetBrains Mono Bold, sans-serif;
     min-height: 20px;
 }
 
@@ -34,6 +34,7 @@ window#waybar.hidden {
     font-size: 12px;
 }
 
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button:hover {
     transition: none;
     box-shadow: inherit;
@@ -52,7 +53,8 @@ window#waybar.hidden {
 #language {
     padding-left: 16px;
     padding-right: 8px;
-    border-radius: 10px 0 0 10px;
+    border-radius: 10px 0px 0px 10px;
+    transition: none;
     color: #ffffff;
     background: #383c4a;
 }
@@ -60,7 +62,26 @@ window#waybar.hidden {
 #keyboard-state {
     margin-right: 8px;
     padding-right: 16px;
-    border-radius: 0 10px 10px 0;
+    border-radius: 0px 10px 10px 0px;
+    transition: none;
+    color: #ffffff;
+    background: #383c4a;
+}
+
+#custom-pacman {
+    padding-left: 16px;
+    padding-right: 8px;
+    border-radius: 10px 0px 0px 10px;
+    transition: none;
+    color: #ffffff;
+    background: #383c4a;
+}
+
+#custom-mail {
+    margin-right: 8px;
+    padding-right: 16px;
+    border-radius: 0px 10px 10px 0px;
+    transition: none;
     color: #ffffff;
     background: #383c4a;
 }
@@ -69,6 +90,7 @@ window#waybar.hidden {
     padding-left: 16px;
     padding-right: 16px;
     border-radius: 10px;
+    transition: none;
     color: #ffffff;
     background: #383c4a;
 }
@@ -76,14 +98,16 @@ window#waybar.hidden {
 #clock {
     padding-left: 16px;
     padding-right: 16px;
-    border-radius: 10px 0 0 10px;
+    border-radius: 10px 0px 0px 10px;
+    transition: none;
     color: #ffffff;
     background: #383c4a;
 }
 
 #custom-weather {
     padding-right: 16px;
-    border-radius: 0 10px 10px 0;
+    border-radius: 0px 10px 10px 0px;
+    transition: none;
     color: #ffffff;
     background: #383c4a;
 }
@@ -93,6 +117,7 @@ window#waybar.hidden {
     padding-left: 16px;
     padding-right: 16px;
     border-radius: 10px;
+    transition: none;
     color: #ffffff;
     background: #383c4a;
 }
@@ -102,15 +127,32 @@ window#waybar.hidden {
     color: #2a5c45;
 }
 
-#custom-mem,
-#cpu,
-#temperature,
-#backlight,
-#battery {
+#custom-mem {
     margin-right: 8px;
     padding-left: 16px;
     padding-right: 16px;
     border-radius: 10px;
+    transition: none;
+    color: #ffffff;
+    background: #383c4a;
+}
+
+#cpu {
+    margin-right: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 10px;
+    transition: none;
+    color: #ffffff;
+    background: #383c4a;
+}
+
+#temperature {
+    margin-right: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 10px;
+    transition: none;
     color: #ffffff;
     background: #383c4a;
 }
@@ -119,7 +161,28 @@ window#waybar.hidden {
     background-color: #eb4d4b;
 }
 
+#backlight {
+    margin-right: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 10px;
+    transition: none;
+    color: #ffffff;
+    background: #383c4a;
+}
+
+#battery {
+    margin-right: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 10px;
+    transition: none;
+    color: #ffffff;
+    background: #383c4a;
+}
+
 #battery.charging {
+    color: #ffffff;
     background-color: #26A65B;
 }
 
@@ -131,13 +194,18 @@ window#waybar.hidden {
 #battery.critical:not(.charging) {
     background-color: #f53c3c;
     color: #ffffff;
-    animation: blink 0.5s linear infinite alternate;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
 #tray {
     padding-left: 16px;
     padding-right: 16px;
     border-radius: 10px;
+    transition: none;
     color: #ffffff;
     background: #383c4a;
 }
